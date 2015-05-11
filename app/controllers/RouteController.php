@@ -105,12 +105,12 @@ class RouteController extends BaseController {
 							
 							$accountUpdate->save();
 
-							$interest = new interest;
-							$interest->account_number = $accountNumber;
-							$interest->type = "fixed";
-							$interest->date = $date;
-							$interest->amount = $total_amount;
-							$interest->save();
+							$interest_saved = new interest;
+							$interest_saved->account_number = $accountNumber;
+							$interest_saved->type = "fixed";
+							$interest_saved->date = $date;
+							$interest_saved->amount = $total_amount;
+							$interest_saved->save();
 
 							$transaction = new transaction;
 			                $transaction->account_number = $accountNumber;
@@ -149,25 +149,26 @@ class RouteController extends BaseController {
 		         			{
 			         			$total_amount = ($amount * 0.0025) + $amount;
 								$accountUpdate->balance = $total_amount;
+
+								$accountUpdate->save();
+
+								$interest_saved = new interest;
+								$interest_saved->account_number = $accountNumber;
+								$interest_saved->type = "credit";
+								$interest_saved->date = $date;
+								$interest_saved->amount = $total_amount;
+								$interest_saved->save();
+
+								$transaction = new transaction;
+				                $transaction->account_number = $accountNumber;
+				                $transaction->amount = $amount * 0.0025;
+				                $transaction->transaction = "Interest";
+				                $transaction->total_balance = $total_amount;
+				                $transaction->type = "interest";
+				                $transaction->save();
 							}
 
-							$accountUpdate->save();
-
-							$interest_saved = new interest;
-							$interest_saved->account_number = $accountNumber;
-							$interest_saved->type = "credit";
-							$interest_saved->date = $date;
-							$interest_saved->amount = $total_amount;
-							$interest_saved->save();
-
-							$transaction = new transaction;
-			                $transaction->account_number = $accountNumber;
-			                $transaction->amount = $amount * 0.0025;
-			                $transaction->transaction = "Interest";
-			                $transaction->total_balance = $total_amount;
-			                $transaction->type = "interest";
-			                $transaction->save();
-		         		}
+						}
 		         	}
 		         	else
 		         	{
@@ -195,24 +196,24 @@ class RouteController extends BaseController {
 		         			{
 			         			$total_amount = ($amount * 0.0025) + $amount;
 								$accountUpdate->balance = $total_amount;
+
+								$accountUpdate->save();
+
+								$interest = new interest;
+								$interest->account_number = $accountNumber;
+								$interest->type = "credit";
+								$interest->date = $date;
+								$interest->amount = $total_amount;
+								$interest->save();
+
+								$transaction = new transaction;
+				                $transaction->account_number = $accountNumber;
+				                $transaction->amount = $amount * 0.0025;
+				                $transaction->transaction = "Interest";
+				                $transaction->total_balance = $total_amount;
+				                $transaction->type = "interest";
+				                $transaction->save();
 							}
-
-							$accountUpdate->save();
-
-							$interest = new interest;
-							$interest->account_number = $accountNumber;
-							$interest->type = "credit";
-							$interest->date = $date;
-							$interest->amount = $total_amount;
-							$interest->save();
-
-							$transaction = new transaction;
-			                $transaction->account_number = $accountNumber;
-			                $transaction->amount = $amount * 0.0025;
-			                $transaction->transaction = "Interest";
-			                $transaction->total_balance = $total_amount;
-			                $transaction->type = "interest";
-			                $transaction->save();
 
 
 		         		}
