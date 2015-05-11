@@ -8,11 +8,12 @@
 
     			var date = new Date();
 
+
     			$("#check").hide();
     			$("#check2").hide();
     			
-    			if(date.getDate() == 28 && date.getHours() >= 15)
-    			//if(date.getDate() == 11 && date.getHours() >= 11)
+    			//if(date.getDate() == 28 && date.getHours() >= 15)
+    			if(date.getDate() == 11 && date.getHours() >= 11)
     			{
     				$("#clearingDayLink").show();
     				$("#clearingDayLink2").hide();
@@ -52,6 +53,7 @@
             	<p id="check2">{{Session::get('msg')}}</p>
 
             	{{Session::put('msg', '')}}
+
             </td>
             <td align="right">
 
