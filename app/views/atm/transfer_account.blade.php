@@ -22,7 +22,7 @@
 			
 			<div class="forms col-md-12">
 			<div class="col-md-3 form-group @if ($errors->has('amount')) has-error @endif">
-		       <p><h4>Current Account: {{ $a->balance }}</h4></p>
+		       <p><h4>Current Balance: {{ $a->balance }}</h4></p>
 		    </div>
 			</div>
 

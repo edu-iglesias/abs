@@ -60,13 +60,13 @@
                             <a href="/atm/profile" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-user"></i></i> Profile Information</a>
                         </li>
                         <li class="">
-                            <a href="/atm/withdraw/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-user"></i></i> Withdraw</a>
+                            <a href="/atm/deposit/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-share"></i></i></i></i></i> Deposit</a>
                         </li>
                         <li class="">
-                            <a href="/atm/deposit/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-user"></i></i> Deposit</a>
+                            <a href="/atm/withdraw/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-reply"></i></i></i></i></i></i> Withdraw</a>
                         </li>
                         <li class="">
-                            <a href="/atm/transfer/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-user"></i></i> Transfer Account</a>
+                            <a href="/atm/transfer/{id}" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-reply-all"></i></i></i></i> Transfer Account</a>
                         </li>
                         <li class="">
                             <a href="/atm/passbook" style="border-bottom: solid 1px rgba(0, 0, 0, 0.2);"><i class="fa fa-clipboard"></i></i></i> View Pass Book</a>
